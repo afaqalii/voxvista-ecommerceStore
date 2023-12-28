@@ -37,7 +37,7 @@ const Navbar = () => {
               alt="logo"
               className="absolute top-[50%] translate-y-[-50%] bottom-[-1px] z-[1]"
             />
-            <h1 className="text-3xl font-extrabold ml-[140px]">vox vista</h1>
+            <h1 className="text-3xl uppercase font-extrabold ml-[140px]">vox vista</h1>
           </div>
           {/* navbar right div */}
           <div className="flex items-center gap-5">

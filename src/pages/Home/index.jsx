@@ -3,6 +3,7 @@ import Header from './Header/Header'
 import "./home.css"
 import Products from './Products/Products'
 import Featured from './featured/Featured'
+import BestSellers from './BestSellers/BestSellers'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <Header/>
         <Products/>
         <Featured/>
+        <BestSellers/>
     </div>
   )
 }

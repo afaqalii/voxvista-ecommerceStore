@@ -24,3 +24,9 @@
     @apply w-[90%] max-w-[1280px] mx-auto px-5;
   }
 }
+/* utility classes  */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
