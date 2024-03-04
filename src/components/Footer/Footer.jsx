@@ -22,7 +22,13 @@ const Footer = () => {
   ];
   const aboutListItems = ["our company"];
   const followUsListItems = [
-    { icons: [<FaInstagram />, <FaFacebook />, <FaTwitter />] },
+    {
+      icons: [
+        <FaInstagram style={{ fontSize: "24px", color: "white" }} />,
+        <FaFacebook style={{ fontSize: "24px", color: "white" }} />,
+        <FaTwitter style={{ fontSize: "24px", color: "white" }} />,
+      ],
+    },
     { text: "contact us" },
     { text: "support center" },
   ];
@@ -37,27 +43,43 @@ const Footer = () => {
     listItem: ``,
   };
   return (
-    <footer className="relative grid place-content-center h-[600px] bg-darkBlack border-t-2 border-white">
-      <figure className="absolute right-0 top-0">
-        <img src={footerLogoRight} alt="logo" />
-      </figure>
-      <div className="container grid-container">
-        {footerContent.map((div) => (
+    <footer className="flex flex-col items-center bg-darkBlack border-t-2 border-white">
+      <div className="relative w-full">
+        <div className="container footer-grid py-20">
+          {/* footer items */}
+          {footerContent.map((div) => (
+            <div>
+              <h1 className="text-white font-bold capitalize">{div.title}</h1>
+              <ul>
+                {div.listItems.map((item) => (
+                  <li className="text-white py-2 capitalize cursor-pointer">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
           <div>
-            <h1 className="text-white font-bold capitalize">{div.title}</h1>
-            <ul>
-              {div.listItems.map((item) => (
-                <li className="text-white py-2 capitalize cursor-pointer">{item}</li>
+            <h1 className="text-white font-bold capitalize">follow us</h1>
+            <div>
+              <div className="flex gap-3 mt-3">
+                {followUsListItems[0].icons.map((icon) => (
+                  <span>{icon}</span>
+                ))}
+              </div>
+              {followUsListItems.map((item) => (
+                <p className="text-white capitalize mt-3">{item?.text}</p>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
-        <div>
-          <h1>follow us</h1>
+          {/* footer rightside image */}
+          <figure className="absolute h-full right-0 top-0">
+            <img className="w-full h-full" src={footerLogoRight} alt="logo" />
+          </figure>
         </div>
       </div>
       {/* foooter copyright */}
-      <div className="absolute bottom-0 w-full flex justify-between items-center px-5 bg-green">
+      <div className="flex justify-between items-center px-5 bg-green w-full">
         <h1>vox vista</h1>
         <img src={footerLogoCenter} alt="footer logo" />
         <h1>2023</h1>

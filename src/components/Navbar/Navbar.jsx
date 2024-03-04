@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <section className="relative flex flex-col justify-center items-center bg-green h-[106px] w-full">
+      <section className="relative font-stint flex flex-col justify-center items-center bg-green h-[106px] w-full">
         <span className="black-stripe-up relative bg-black w-full h-[21px]"></span>
         <nav className="container flex items-center justify-between bg-green h-[60px]">
           {/* logo section */}
@@ -54,10 +54,11 @@ const Navbar = () => {
         </nav>
         <span className="black-stripe-down relative bg-black w-full h-[25px]"></span>
       </section>
-      <div className="flex justify-center bg-lightWhite h-[45px] pl-10">
-        <ul className="container flex items-center gap-5 font-poppins">
+      {/* navbar items  */}
+      <div className="flex justify-center bg-lightWhite pl-10">
+        <ul className="container flex items-center gap-7 font-poppins">
           {menuItems.map((item) => (
-            <li className="capitalize text-xs cursor-pointer">{item.item}</li>
+            <li className="capitalize text-[13px] cursor-pointer mx-3 py-3 hover:text-orange">{item.item}</li>
           ))}
         </ul>
       </div>

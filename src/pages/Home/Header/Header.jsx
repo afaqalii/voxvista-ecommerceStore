@@ -10,8 +10,8 @@ const Header = () => {
         src={bgImageRight}
         alt="image right"
       />
-      <main className="container relative z-10 flex flex-col justify-center gap-5 h-[100vh]">
-        <h1 className="uppercase text-4xl text-white w-2/3">
+      <main className="container relative font-stint  z-10 flex flex-col justify-center gap-5 h-[100vh]">
+        <h1 className="uppercase font-medium text-4xl text-[#ffff] w-2/3">
           experience <br /> production grade <br /> audio system
         </h1>
         <p className="text-white w-2/3">

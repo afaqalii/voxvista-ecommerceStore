@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        stint: ["Stint Ultra Expanded", "serif"]
       },
       borderRadius: {
         sm: "15.568px",

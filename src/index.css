@@ -7,9 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Orbitron", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-family: "Stint Ultra Expanded", serif;
 }
 :root {
   --colors-green: #31a36c;
@@ -19,6 +16,7 @@
   --colors-lightWhite: #d9d9d9;
   --colors-orange: #fa4616;
 }
+
 @layer components {
   .container {
     @apply w-[90%] max-w-[1280px] mx-auto px-5;
@@ -28,5 +26,10 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }

@@ -4,7 +4,7 @@ import Card from "../Products/Card";
 const BestSellers = () => {
   return (
     <div className="container">
-      <h1 className="text-white text-4xl text-center uppercase my-14">
+      <h1 className="text-white font-stint text-[40px] text-center uppercase my-14">
         best sellers
       </h1>
       <div className="grid-container">
