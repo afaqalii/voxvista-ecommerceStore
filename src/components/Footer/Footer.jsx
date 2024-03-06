@@ -43,9 +43,9 @@ const Footer = () => {
     listItem: ``,
   };
   return (
-    <footer className="flex flex-col items-center bg-darkBlack border-t-2 border-white">
-      <div className="relative w-full">
-        <div className="container footer-grid py-20">
+    <footer className=" flex flex-col items-center bg-darkBlack border-t-2 border-white">
+      <div className="relative w-full h-[600px]">
+        <div className="relative z-10 container footer-grid py-20 border-b-green border-b-2">
           {/* footer items */}
           {footerContent.map((div) => (
             <div>
@@ -72,17 +72,19 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          {/* footer rightside image */}
-          <figure className="absolute h-full right-0 top-0">
-            <img className="w-full h-full" src={footerLogoRight} alt="logo" />
-          </figure>
         </div>
+        {/* footer rightside image */}
+        <figure className="absolute h-full right-0 top-0">
+          <img className="w-full h-full mix-blend-color-burn" src={footerLogoRight} alt="logo" />
+        </figure>
       </div>
       {/* foooter copyright */}
       <div className="flex justify-between items-center px-5 bg-green w-full">
-        <h1>vox vista</h1>
+        <h1 className="text-3xl font-stint uppercase font-extrabold">
+          vox vista
+        </h1>
         <img src={footerLogoCenter} alt="footer logo" />
-        <h1>2023</h1>
+        <h1 className="text-3xl font-stint uppercase font-extrabold">2023</h1>
       </div>
     </footer>
   );
