@@ -56,9 +56,9 @@ const Navbar = () => {
       </section>
       {/* navbar items  */}
       <div className="flex justify-center bg-lightWhite pl-10">
-        <ul className="container flex items-center gap-7 font-poppins">
+        <ul className="container flex items-center font-poppins">
           {menuItems.map((item) => (
-            <li className="capitalize text-[13px] cursor-pointer mx-3 py-3 hover:text-orange">{item.item}</li>
+            <li className="capitalize text-[13px] cursor-pointer mx-4 py-3 hover:text-orange">{item.item}</li>
           ))}
         </ul>
       </div>

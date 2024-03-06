@@ -25,7 +25,7 @@ const Header = () => {
         </button>
       </main>
       {/* green blue dot */}
-      {/* <span className="absolute green-blue-dot bg-green w-[375px] h-[375px] z-10 bottom-[-200px] left-0"></span> */}
+      <span className="absolute green-blue-dot bg-green w-[375px] h-[375px] z-10 bottom-[-200px] left-0"></span>
     </header>
   );
 };
