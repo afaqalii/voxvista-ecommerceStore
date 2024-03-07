@@ -4,6 +4,7 @@ import bgImageRight from "../../../assets/pianoTiles.jpeg";
 const Header = () => {
   return (
     <header className="relative header-bg-image bg-darkBlack">
+      {/* black blue dot */}
       <span className="bg-darkBlack w-[400px] h-1/2 z-10 top-1/2 translate-y-[-50%] left-1/2 translate-x-[-50%]  absolute blur-[50px]"></span>
       <img
         className="absolute object-cover right-0 top-0 w-[771.625px] h-full"
@@ -20,12 +21,12 @@ const Header = () => {
           <br />
           <br /> Book your audio system now
         </p>
-        <button className="w-[150px] h-[40px] text-center capitalize bg-lightWhite rounded-sm mt-10">
+        <button className="relative z-20 w-[150px] h-[40px] text-center capitalize bg-lightWhite rounded-sm mt-10">
           book now!
         </button>
       </main>
       {/* green blue dot */}
-      <span className="absolute green-blue-dot bg-green w-[375px] h-[375px] z-10 bottom-[-200px] left-0"></span>
+      <span className="absolute green-blue-dot blur-[50px] bg-green rounded-full w-[475px] h-[500px] z-[1] bottom-[-250px] left-[-200px]"></span>
     </header>
   );
 };

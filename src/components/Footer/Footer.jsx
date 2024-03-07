@@ -75,16 +75,26 @@ const Footer = () => {
         </div>
         {/* footer rightside image */}
         <figure className="absolute h-full right-0 top-0">
-          <img className="w-full h-full mix-blend-color-burn" src={footerLogoRight} alt="logo" />
+          <img
+            className="w-full h-full mix-blend-color-burn"
+            src={footerLogoRight}
+            alt="logo"
+          />
         </figure>
       </div>
       {/* foooter copyright */}
       <div className="flex justify-between items-center px-5 bg-green w-full">
-        <h1 className="text-3xl font-stint uppercase font-extrabold">
+        <h1 className="text-xl min-[600px]:text-3xl font-stint uppercase font-extrabold">
           vox vista
         </h1>
-        <img src={footerLogoCenter} alt="footer logo" />
-        <h1 className="text-3xl font-stint uppercase font-extrabold">2023</h1>
+        <img
+          className="max-[500px]:w-[90px] max-[600px]:w-[120px]"
+          src={footerLogoCenter}
+          alt="footer logo"
+        />
+        <h1 className="text-xl min-[600px]:text-3xl font-stint uppercase font-extrabold">
+          2023
+        </h1>
       </div>
     </footer>
   );
