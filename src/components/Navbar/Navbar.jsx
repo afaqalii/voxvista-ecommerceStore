@@ -33,11 +33,16 @@ const menuItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(); // use ref for opening closing menu items in mobile version
-
+  const excludedRef = useRef();
   // using click away custom hook
-  useClickOutsideDetector(menuRef, () => {
-    setIsOpen(false);
-  });
+  useClickOutsideDetector(
+    menuRef,
+    () => {
+      setIsOpen(false);
+    },
+    excludedRef
+  );
+
   return (
     <>
       <section className="relative font-stint flex flex-col justify-center items-center bg-green h-[106px] w-full">
@@ -56,10 +61,12 @@ const Navbar = () => {
             </h1>
           </div>
           {/* menu icon right */}
-          <IoMdMenu
-            onClick={() => setIsOpen(!isOpen)}
-            className="cursor-pointer text-2xl min-[600px]:hidden"
-          />
+          <span ref={excludedRef}>
+            <IoMdMenu
+              onClick={() => setIsOpen(!isOpen)}
+              className="cursor-pointer text-2xl min-[600px]:hidden"
+            />
+          </span>
           {/* navbar right div */}
           <div
             className={`${
@@ -69,19 +76,19 @@ const Navbar = () => {
           >
             <span style={iconSpan}>
               <FiSearch style={iconStyle} />
-              <p className="text-[11px] text-black font-light capitalize min-[600px]:hidden">
+              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
                 search
               </p>
             </span>
             <span style={iconSpan}>
               <FaCircleUser style={iconStyle} />
-              <p className="text-[11px] text-black font-light capitalize min-[600px]:hidden">
+              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
                 profile
               </p>
             </span>
             <span style={iconSpan}>
               <MdOutlineShoppingCart style={iconStyle} />
-              <p className="text-[11px] text-black font-light capitalize min-[600px]:hidden">
+              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
                 cart
               </p>
             </span>

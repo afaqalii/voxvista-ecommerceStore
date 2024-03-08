@@ -1,23 +1,28 @@
 import { useEffect } from "react";
-function useClickOutsideDetector(ref, onClickOutside) {
-  //  "ref" is the reference to the element that should not detect clicks outside.
-  // "onClickOutside" excepts a call back function  that will be called when the user clicks outside of the element.
+
+function useClickOutsideDetector(ref, onClickOutside, excludedRef = null) {
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
+      const clickedOutside = ref.current && !ref.current.contains(event.target);
+      const clickedOnExcluded = excludedRef && excludedRef.current && excludedRef.current.contains(event.target);
+
+      if (clickedOutside && !clickedOnExcluded) {
         onClickOutside();
       }
     }
+
     // Bind
     document.addEventListener("mousedown", handleClickOutside, {
       capture: true,
     });
+
     return () => {
-      // dispose
+      // Dispose
       document.removeEventListener("mousedown", handleClickOutside, {
         capture: true,
       });
     };
-  }, [ref, onClickOutside]);
+  }, [ref, onClickOutside, excludedRef]);
 }
+
 export default useClickOutsideDetector;
