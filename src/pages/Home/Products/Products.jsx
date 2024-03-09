@@ -13,7 +13,7 @@ const Products = () => {
   };
   return (
     <section className="container py-10">
-      <h1 className="text-white font-stint text-[40px] text-center uppercase my-14">
+      <h1 className="text-white font-stint text-3xl min-[450px]:text-[40px] text-center uppercase my-14">
         Products
       </h1>
       <div className="products-box">

@@ -44,7 +44,7 @@ const Footer = () => {
   };
   return (
     <footer className=" flex flex-col items-center bg-darkBlack border-t-2 border-white">
-      <div className="relative w-full h-[600px]">
+      <div className="relative w-full min-h-[600px]">
         <div className="relative z-10 container footer-grid py-20 border-b-green border-b-2">
           {/* footer items */}
           {footerContent.map((div) => (

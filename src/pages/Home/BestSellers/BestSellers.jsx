@@ -10,7 +10,7 @@ const BestSellers = () => {
   ];
   return (
     <div className="container">
-      <h1 className="text-white font-stint text-[40px] text-center uppercase my-14">
+      <h1 className="text-white font-stint text-3xl min-[450px]:text-[40px] text-center uppercase my-14">
         best sellers
       </h1>
       <div className="grid-container pb-[120px]">

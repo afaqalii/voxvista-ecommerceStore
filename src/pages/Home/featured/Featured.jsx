@@ -15,7 +15,7 @@ const Featured = () => {
       style={customStyle}
       className="container px-0 relative flex bg-darkGray rounded-lg my-10"
     >
-      <h1 className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] uppercase text-green font-extrabold font-poppins text-center text-[56px]">
+      <h1 className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] uppercase text-green font-extrabold font-poppins text-center text-4xl min-[450px]:text-[56px]">
         featured!
       </h1>
       <figure className="flex-1">
