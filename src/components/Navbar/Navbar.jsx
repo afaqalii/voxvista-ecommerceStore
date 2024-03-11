@@ -6,6 +6,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import logo from "../../assets/Logo.jpg";
 import { IoMdMenu } from "react-icons/io";
 import useClickOutsideDetector from "../../hooks/useClickAwayListner";
+import { NavLink } from "react-router-dom";
 
 // local data
 const iconSpan = {
@@ -50,16 +51,18 @@ const Navbar = () => {
         <span className="black-stripe-up relative bg-black w-full h-[21px]"></span>
         <nav className="container flex items-center justify-between bg-green h-[60px]">
           {/* logo section */}
-          <div className="flex items-center gap-2 sm:gap-5 cursor-pointer">
-            <img
-              src={logo}
-              alt="logo"
-              className="absolute top-[50%] translate-y-[-50%] bottom-[-1px] z-[1]"
-            />
-            <h1 className="text-xl uppercase font-extrabold ml-[140px] max-[430px]:hidden min-[750px]:text-3xl">
-              vox vista
-            </h1>
-          </div>
+          <NavLink to={`/`}>
+            <div className="flex items-center gap-2 sm:gap-5 cursor-pointer">
+              <img
+                src={logo}
+                alt="logo"
+                className="absolute top-[50%] translate-y-[-50%] bottom-[-1px] z-[1]"
+              />
+              <h1 className="text-xl uppercase font-extrabold ml-[140px] max-[430px]:hidden min-[750px]:text-3xl">
+                vox vista
+              </h1>
+            </div>
+          </NavLink>
           {/* menu icon right */}
           <span ref={excludedRef}>
             <IoMdMenu
@@ -86,12 +89,14 @@ const Navbar = () => {
                 profile
               </p>
             </span>
-            <span style={iconSpan}>
-              <MdOutlineShoppingCart style={iconStyle} />
-              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
-                cart
-              </p>
-            </span>
+            <NavLink to={`/cart`}>
+              <span style={iconSpan}>
+                <MdOutlineShoppingCart style={iconStyle} />
+                <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
+                  cart
+                </p>
+              </span>
+            </NavLink>
           </div>
         </nav>
         <span className="black-stripe-down relative bg-black w-full h-[25px]"></span>

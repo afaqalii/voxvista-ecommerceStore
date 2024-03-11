@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { NavLink } from "react-router-dom";
 
 const Card = ({ card }) => {
   const cardStyle = {
@@ -9,20 +10,22 @@ const Card = ({ card }) => {
   };
   return (
     <div className="mx-auto">
-      {/* background mask */}
-      <main className="relative overflow-hidden">
-        <figure className="absolute left-0 top-0 w-full h-full scale-[1.3]">
-          <img src={card?.mask} alt="image mask" />
-        </figure>
-        {/* img */}
-        <figure
-          style={cardStyle}
-          className="grid place-content-center relative w-[268px] h-[460px] rounded-md"
-        >
-          <img src={card?.img} alt={card?.title} />
-        </figure>
-      </main>
-      <h1 className="text-white text-xl mt-5 text-center">{card?.title}</h1>
+      <NavLink to={`/product`}>
+        {/* background mask */}
+        <main className="relative overflow-hidden">
+          <figure className="absolute left-0 top-0 w-full h-full scale-[1.3]">
+            <img src={card?.mask} alt="image mask" />
+          </figure>
+          {/* img */}
+          <figure
+            style={cardStyle}
+            className="grid place-content-center relative w-[268px] h-[460px] rounded-md"
+          >
+            <img src={card?.img} alt={card?.title} />
+          </figure>
+        </main>
+        <h1 className="text-white text-xl mt-5 text-center">{card?.title}</h1>
+      </NavLink>
     </div>
   );
 };

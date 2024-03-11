@@ -29,6 +29,8 @@ const ProductDetails = () => {
   const [smallScreen, setSmallScreen] = useState(false);
 
   useEffect(() => {
+    // scroll to top on each render
+    scrollTo(0, 0);
     // Function to handle screen size changes
     const handleResize = () => {
       setSmallScreen(window.innerWidth >= 850);
