@@ -1,0 +1,56 @@
+/* dropdown select class */
+.css-1qpsoov-DropDown {
+    color: black;
+}
+/* selected option in the dropdown select */
+.css-z2hyoe-ItemComponent.react-dropdown-select-item-selected {
+    background-color: var(--colors-green) !important;
+}
+/* dynamic price value */
+.inputValue {
+  position: absolute;
+  font-size: 12px;
+  width: 55px;
+  text-align: center;
+  line-height: 45px;
+  top: -50px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  font-weight: bold;
+  z-index: 2;
+}
+.inputValue.show {
+  transform: translateX(-50%) scale(1);
+}
+.inputValue::after {
+  position: absolute;
+  content: "";
+  background-color: var(--colors-green);
+  height: 45px;
+  width: 45px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border: 3px solid #fff;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  z-index: -1;
+}
+.input-field input {
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.input-field input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: var(--colors-green);
+  border: 1px solid var(--colors-green);
+  cursor: pointer;
+  border-radius: 50%;
+}
