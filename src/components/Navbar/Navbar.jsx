@@ -83,12 +83,6 @@ const Navbar = () => {
                 search
               </p>
             </span>
-            <span style={iconSpan}>
-              <FaCircleUser style={iconStyle} />
-              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
-                profile
-              </p>
-            </span>
             <NavLink to={`/cart`}>
               <span style={iconSpan}>
                 <MdOutlineShoppingCart style={iconStyle} />
@@ -97,6 +91,12 @@ const Navbar = () => {
                 </p>
               </span>
             </NavLink>
+            <span style={iconSpan}>
+              <FaCircleUser style={iconStyle} />
+              <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
+                profile
+              </p>
+            </span>
           </div>
         </nav>
         <span className="black-stripe-down relative bg-black w-full h-[25px]"></span>
