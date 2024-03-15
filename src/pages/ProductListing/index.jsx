@@ -8,17 +8,30 @@ import "./productListing.css";
 const options = [
   {
     value: 1,
-    label: "Leanne Graham",
+    label: "Sort by Old to new",
   },
   {
     value: 2,
-    label: "Ervin Howell",
+    label: "Sort by New to Old",
+  },
+  {
+    value: 3,
+    label: "Sort by Hight to Low",
+  },
+  {
+    value: 4,
+    label: "Sort by Low to Hight",
   },
 ];
 const ProductListing = () => {
   const [values, setValues] = useState("");
   const [priceRange, setPriceRange] = useState(50);
   const inputValueRef = useRef();
+
+  useEffect(() => {
+    // scroll to top on each render
+    scrollTo(0, 0);
+  }, []);
   return (
     <div className="container text-white my-10">
       <h1 className="font-bold text-3xl my-5">Headphones</h1>
@@ -34,7 +47,7 @@ const ProductListing = () => {
           </div>
         </div>
         {/* right div */}
-        <div className="flex flex-col min-h-screen w-[380px] text-white bg-gray p-5 capitalize rounded-l-xl">
+        <div className="flex flex-col min-h-screen w-full max-w-[300px] text-white bg-gray p-5 capitalize rounded-l-xl">
           <Select
             placeholder="Sort by"
             options={options}
@@ -55,7 +68,7 @@ const ProductListing = () => {
                     inputValueRef.current.classList.add("show");
                     let percentage = ((priceRange - 50) / (1000 - 50)) * 100; // Calculate percentage
                     inputValueRef.current.style.left = percentage + "%"; // Set left style with percentage
-                    }}                  
+                  }}
                   onInput={() => {
                     let percentage = ((priceRange - 50) / (1000 - 50)) * 100; // Calculate percentage
                     inputValueRef.current.style.left = percentage + "%"; // Set left style with percentage

@@ -1,5 +1,6 @@
 import React from "react";
 import bgImageRight from "../../../assets/pianoTiles.jpeg";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -21,9 +22,9 @@ const Header = () => {
           <br />
           <br /> Book your audio system now
         </p>
-        <button className="relative z-20 w-[150px] h-[40px] text-center capitalize bg-lightWhite rounded-sm mt-10">
-          book now!
-        </button>
+        <NavLink to={"/productListing"} className="relative grid place-content-center z-20 w-[150px] h-[40px] text-center capitalize bg-lightWhite rounded-sm mt-10">
+          buy now!
+        </NavLink>
       </main>
       {/* green blue dot */}
       <span className="absolute max-lg:hidden green-blue-dot blur-[50px] bg-green rounded-full w-[475px] h-[500px] z-[1] bottom-[-250px] left-[-200px]"></span>
