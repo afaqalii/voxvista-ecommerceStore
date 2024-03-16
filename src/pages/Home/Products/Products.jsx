@@ -16,7 +16,7 @@ const Products = () => {
       <h1 className="text-white font-stint text-3xl min-[450px]:text-[40px] text-center uppercase my-14">
         Products
       </h1>
-      <div className="products-box">
+      <div className="products-box place-content-center">
         <Card card={card} />
         <Card card={card} />
         <Card card={card} />
