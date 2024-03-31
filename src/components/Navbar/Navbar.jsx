@@ -96,13 +96,6 @@ const Navbar = () => {
               <p className="text-[12px] text-black font-medium font-poppins capitalize min-[600px]:hidden">
                 profile
               </p>
-              {/* profile menu */}
-              {/* <div>
-                <ul>
-                  <li>Sign In</li>
-                  
-                </ul>
-              </div> */}
             </span>
           </div>
         </nav>
