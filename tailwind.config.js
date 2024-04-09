@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
         stint: ["Stint Ultra Expanded", "serif"]
       },
       borderRadius: {
@@ -15,7 +16,8 @@ export default {
         green: "#31A36C",
         black: "#1E1E1E",
         gray: "#3F3F3F",
-        gray100:"#424242", // given to dashboard sidebar bg
+        gray50: "#5D5D5D",
+        gray100: "#424242", // given to dashboard sidebar bg
         gray200: "#5a5a6a",
         darkGray: "#373737",
         darkBlack: "#1D1D1D",

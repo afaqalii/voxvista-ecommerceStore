@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 // asssets
-import logo from "../../assets/sidebarLogo.jpg";
+import { HiDotsHorizontal } from "react-icons/hi";
+import logo from "../../assets/Logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { toggleSidebar } from "../../store/reducers/UISlice";
-import isActive from "../../hooks/isActive";
 import { CiCircleInfo } from "react-icons/ci";
 import { HiMiniBellAlert } from "react-icons/hi2";
 import { MdHomeFilled } from "react-icons/md";
 import { MdOutlineCategory } from "react-icons/md";
 import { IoStatsChartSharp } from "react-icons/io5";
+import isActive from "../../hooks/isActive";
 
 const DashboardSidebar = () => {
   const { isSidebarOpen } = useSelector((state) => state.UI);
@@ -34,31 +35,31 @@ const DashboardSidebar = () => {
   const sideLinks = [
     {
       title: "requests",
-      icon: <CiCircleInfo />,
-      path: "/requests",
+      icon: <CiCircleInfo className="w-full h-full" />,
+      path: "/dashboard/requests",
     },
     {
       title: "notifications",
-      icon: <HiMiniBellAlert />,
-      path: "/notifications",
+      icon: <HiMiniBellAlert className="w-full h-full" />,
+      path: "/dashboard/notifications",
     },
   ];
 
   const sideLink2 = [
     {
       title: "dashboard",
-      icon: <MdHomeFilled />,
-      path: "/dashboard/tenants",
+      icon: <MdHomeFilled className="w-full h-full" />,
+      path: "/dashboard",
     },
     {
       title: "products",
-      path: "/products",
-      icon: <MdOutlineCategory />,
+      path: "/dashboard/products",
+      icon: <MdOutlineCategory className="w-full h-full" />,
     },
     {
       title: "stats",
-      path: "/stats",
-      icon: <IoStatsChartSharp />,
+      path: "/dashboard/stats",
+      icon: <IoStatsChartSharp className="w-full h-full" />,
     },
   ];
 
@@ -67,8 +68,8 @@ const DashboardSidebar = () => {
       className={`
       ${
         isSidebarOpen ? "w-full max-w-[256px]" : "hidden"
-      } shadow-primary bg-gray100 overflow-y-auto  h-full max-h-full px-5
-      ${isSmallScreen ? "fixed left-0 w-full max-w-full" : ""}
+      } shadow-primary bg-gray100 overflow-y-auto  h-full max-h-full
+      ${isSmallScreen ? "fixed left-0 w-full max-w-full" : "relative"}
       `}
     >
       {isSidebarOpen &&
@@ -81,42 +82,77 @@ const DashboardSidebar = () => {
           </span>
         )}
       {/*logo */}
-      <div className="flex items-center justify-center gap-1 h-[100px] p-5 mb-[24px]">
-        <h1 className="text-primary-blue text-[27px]">Vox Vista</h1>
-        <img src={logo} alt="logo" className="max-w-none w-[80px]" />
+      <div className="flex items-center h-[100px] mb-[24px] mt-5">
+        <img
+          src={logo}
+          alt="logo"
+          className="relative max-w-none object-cover h-[80px] w-[80px]"
+        />
+        <span className="grid place-content-center font-orbitron ml-[-20px] leading-4 font-extrabold text-base text-black h-[70px] bg-green w-1/2 rounded-tr-full rounded-br-full">
+          Vox <br /> Vista
+        </span>
       </div>
-      <div>
-        {sideLinks?.map((linkItem, i) => (
-          <NavLink
-            onClick={() => {
-              isSmallScreen ? dispatch(toggleSidebar(false)) : null;
-            }}
-            key={i}
-            to={linkItem?.path}
-          >
-            <div className={``}>
-              <span>{linkItem.icon}</span>
-              <p className="ml-10">{linkItem?.title}</p>
-            </div>
-          </NavLink>
-        ))}
-      </div>
-      <div>
-        {sideLink2?.map((linkItem, i) => (
-          <NavLink
-            onClick={() => {
-              isSmallScreen ? dispatch(toggleSidebar(false)) : null;
-            }}
-            key={i}
-            to={linkItem?.path}
-          >
-            <div className={`flex items-center gap-4`}>
-              <span>{linkItem.icon}</span>
-              <p className="">{linkItem?.title}</p>
-            </div>
-          </NavLink>
-        ))}
-      </div>
+      <section>
+        <div className={"mb-8"}>
+          {sideLinks?.map((linkItem, i) => (
+            <NavLink
+              onClick={() => {
+                isSmallScreen ? dispatch(toggleSidebar(false)) : null;
+              }}
+              key={i}
+              to={linkItem?.path}
+            >
+              <div
+                className={`flex items-center gap-4 pt-[6px] pb-[12px] px-5 ${
+                  isActive(linkItem.path) ? " bg-gray50 " : ""
+                }`}
+              >
+                <span className="h-[24px] w-[24px] text-green">
+                  {linkItem.icon}
+                </span>
+                <p className="text-[22px] text-white capitalize">
+                  {linkItem?.title}
+                </p>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+        <hr className="text-white" />
+        <div className="mt-8">
+          {sideLink2?.map((linkItem, i) => (
+            <NavLink
+              onClick={() => {
+                isSmallScreen ? dispatch(toggleSidebar(false)) : null;
+              }}
+              key={i}
+              to={linkItem?.path}
+            >
+              <div
+                className={`flex items-center gap-4 px-5 pt-[6px] pb-[12px] ${
+                  isActive(linkItem.path) ? " bg-gray50" : ""
+                }`}
+              >
+                <span className="h-[24px] w-[24px] text-green">
+                  {linkItem.icon}
+                </span>
+                <p className="text-[22px] text-white capitalize">
+                  {linkItem?.title}
+                </p>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+      </section>
+      <section className="absolute bottom-0 w-full flex justify-between items-center gap-5 p-5 border-t-[2px] border-white">
+        <div className="flex items-start gap-3">
+          <span className="h-[35px] w-[35px] rounded-full bg-white"></span>
+          <div className="text-white">
+            <h3 className="text-sm">Username</h3>
+            <p className="text-[10px]">Manager</p>
+          </div>
+        </div>
+        <HiDotsHorizontal className="text-green text-xl" />
+      </section>
     </div>
   );
 };

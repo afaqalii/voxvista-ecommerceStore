@@ -21,6 +21,12 @@ const AppRoutes = () => {
           }
         >
           {/*  routes that are protected  */}
+          <Route element={<h1>Coming soonF</h1>} />
+          <Route path="requests" element={<h1>Coming soonF</h1>} />
+          <Route path="notifications" element={<h1>Coming soonF</h1>} />
+          <Route path="products" element={<h1>Coming soonF</h1>} />
+          <Route path="stats" element={<h1>Coming soonF</h1>} />
+
         </Route>
         {/* routes that are public */}
         <Route path="/" element={<Layout />}>
