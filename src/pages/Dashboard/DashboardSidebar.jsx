@@ -67,18 +67,18 @@ const DashboardSidebar = () => {
     <div
       className={`
       ${
-        isSidebarOpen ? "w-full max-w-[256px]" : "hidden"
+        isSidebarOpen ? "w-full max-w-[256px]" : "max-w-0"
       } shadow-primary bg-gray100 overflow-y-auto  h-full max-h-full
       ${isSmallScreen ? "fixed left-0 w-full max-w-full" : "relative"}
-      `}
+      transition-all `}
     >
       {isSidebarOpen &&
         isSmallScreen && ( // show only on small devices and when sidebar is open
           <span
             onClick={() => dispatch(toggleSidebar(false))}
-            className="fixed top-[30px] right-[30px] h-8 w-8 cursor-pointer rounded-full bg-gray66 p-1"
+            className="fixed top-[50px] right-[30px] h-8 w-8 cursor-pointer rounded-full bg-gray66 p-1"
           >
-            <HiOutlineBars3 className="w-full h-full text-primary-blue" />
+            <HiOutlineBars3 className="w-full h-full text-white" />
           </span>
         )}
       {/*logo */}
