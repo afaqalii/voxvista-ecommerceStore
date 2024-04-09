@@ -16,8 +16,8 @@ const DashboardNavbar = () => {
         >
           <HiOutlineBars3 className="w-full h-full text-white" />
         </span>
-        <div className="searchBar flex items-center gap-5 w-full text-white h-[70px] rounded-2xl bg-gray100 px-5">
-          <IoSearchOutline className="text-2xl" />
+        <div className="searchBar flex items-center gap-5 w-full text-white h-[50px] rounded-2xl bg-gray100 px-5">
+          <IoSearchOutline className="text-xl" />
           <input
             type="text"
             placeholder="Search for anything..."
