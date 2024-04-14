@@ -7,6 +7,7 @@ import PageNotFound from "../pages/PageNotFound";
 import DashboardLayout from "./DashboardLayout";
 import ProtectedRoute from "./ProtectedRoute";
 import Home from "../pages/Home";
+import Dashboard from "../pages/Dashboard/pages/homePage/DashboardHome";
 
 const AppRoutes = () => {
   return (
@@ -21,7 +22,7 @@ const AppRoutes = () => {
           }
         >
           {/*  routes that are protected  */}
-          <Route element={<h1>Coming soonF</h1>} />
+          <Route index element={<Dashboard/>} />
           <Route path="requests" element={<h1>Coming soonF</h1>} />
           <Route path="notifications" element={<h1>Coming soonF</h1>} />
           <Route path="products" element={<h1>Coming soonF</h1>} />

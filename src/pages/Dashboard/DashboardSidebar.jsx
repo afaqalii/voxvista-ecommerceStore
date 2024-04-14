@@ -67,10 +67,10 @@ const DashboardSidebar = () => {
     <div
       className={`
       ${
-        isSidebarOpen ? "w-full max-w-[256px]" : "max-w-0"
+        isSidebarOpen ? "w-full max-w-full min-[600px]:max-w-[256px]" : "max-w-0"
       } shadow-primary bg-gray100 overflow-y-auto  h-full max-h-full
-      ${isSmallScreen ? "fixed left-0 w-full max-w-full" : "relative"}
-      transition-all `}
+      ${isSmallScreen ? "fixed left-0" : "relative"}
+      transition-all`}
     >
       {isSidebarOpen &&
         isSmallScreen && ( // show only on small devices and when sidebar is open
@@ -82,7 +82,10 @@ const DashboardSidebar = () => {
           </span>
         )}
       {/*logo */}
-      <div className="flex items-center h-[100px] mb-[24px] mt-5">
+      <div
+        className="flex items-center h-[100px] mb-[24px] mt-5"
+        onClick={() => dispatch(toggleSidebar(true))}
+      >
         <img
           src={logo}
           alt="logo"

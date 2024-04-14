@@ -5,11 +5,13 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex w-full h-screen">
+    <div className="flex w-full h-screen bg-darkGray">
       <DashboardSidebar />
       <main className="w-full">
         <DashboardNavbar />
-        <Outlet />
+        <div className="p-5">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
