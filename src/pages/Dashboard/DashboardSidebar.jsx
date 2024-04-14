@@ -6,9 +6,9 @@ import logo from "../../assets/Logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { toggleSidebar } from "../../store/reducers/UISlice";
-import { CiCircleInfo } from "react-icons/ci";
-import { HiMiniBellAlert } from "react-icons/hi2";
+import { MdProductionQuantityLimits } from "react-icons/md";
 import { MdHomeFilled } from "react-icons/md";
+import { FaList } from "react-icons/fa";
 import { MdOutlineCategory } from "react-icons/md";
 import { IoStatsChartSharp } from "react-icons/io5";
 import isActive from "../../hooks/isActive";
@@ -34,14 +34,14 @@ const DashboardSidebar = () => {
   }, []);
   const sideLinks = [
     {
-      title: "requests",
-      icon: <CiCircleInfo className="w-full h-full" />,
-      path: "/dashboard/requests",
+      title: "Orders",
+      icon: <MdProductionQuantityLimits  className="w-full h-full" />,
+      path: "/dashboard/orders",
     },
     {
-      title: "notifications",
-      icon: <HiMiniBellAlert className="w-full h-full" />,
-      path: "/dashboard/notifications",
+      title: "Listing",
+      icon: <FaList  className="w-full h-full" />,
+      path: "/dashboard/listing",
     },
   ];
 

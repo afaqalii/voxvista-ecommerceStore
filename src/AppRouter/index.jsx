@@ -23,8 +23,8 @@ const AppRoutes = () => {
         >
           {/*  routes that are protected  */}
           <Route index element={<Dashboard/>} />
-          <Route path="requests" element={<h1>Coming soonF</h1>} />
-          <Route path="notifications" element={<h1>Coming soonF</h1>} />
+          <Route path="orders" element={<h1>Coming soonF</h1>} />
+          <Route path="listing" element={<h1>Coming soonF</h1>} />
           <Route path="products" element={<h1>Coming soonF</h1>} />
           <Route path="stats" element={<h1>Coming soonF</h1>} />
 
