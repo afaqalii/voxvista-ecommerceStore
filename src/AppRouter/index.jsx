@@ -8,6 +8,7 @@ import DashboardLayout from "./DashboardLayout";
 import ProtectedRoute from "./ProtectedRoute";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard/pages/homePage/DashboardHome";
+import UpdateProducts from "../pages/Dashboard/pages/UpdateProducts/UpdateProducts";
 
 const AppRoutes = () => {
   return (
@@ -22,12 +23,11 @@ const AppRoutes = () => {
           }
         >
           {/*  routes that are protected  */}
-          <Route index element={<Dashboard/>} />
+          <Route index element={<Dashboard />} />
           <Route path="orders" element={<h1>Coming soonF</h1>} />
           <Route path="listing" element={<h1>Coming soonF</h1>} />
-          <Route path="products" element={<h1>Coming soonF</h1>} />
+          <Route path="addProduct" element={<UpdateProducts />} />
           <Route path="stats" element={<h1>Coming soonF</h1>} />
-
         </Route>
         {/* routes that are public */}
         <Route path="/" element={<Layout />}>

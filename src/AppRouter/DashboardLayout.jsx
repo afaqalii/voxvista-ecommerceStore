@@ -5,9 +5,9 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex w-full h-screen bg-darkGray">
+    <div className="flex w-full h-screen bg-darkGray overflow-hidden scrollbar-none">
       <DashboardSidebar />
-      <main className="w-full">
+      <main className="overflow-auto w-full">
         <DashboardNavbar />
         <div className="p-5">
           <Outlet />

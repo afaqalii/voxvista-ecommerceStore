@@ -1,0 +1,12 @@
+.form section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+.field-box input {
+    padding: 5px;
+    outline: none;
+    border: none;
+    color: black;
+    width: 100%;
+}

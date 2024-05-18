@@ -52,8 +52,8 @@ const DashboardSidebar = () => {
       path: "/dashboard",
     },
     {
-      title: "products",
-      path: "/dashboard/products",
+      title: "add products",
+      path: "/dashboard/addProduct",
       icon: <MdOutlineCategory className="w-full h-full" />,
     },
     {
